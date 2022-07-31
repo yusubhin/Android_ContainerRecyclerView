@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     fun loadData(): MutableList<Memo> {
         val data: MutableList<Memo> = mutableListOf() //리턴할 MutableList 선언
         for (no in 1..100) {
-            val title = "이것이 안드로이드다 %{no}"
+            val title = "이것이 안드로이드다 ${no}"
             val date = System.currentTimeMillis() //안드로이드 스마트폰의 현재 시간
             val memo = Memo(no, title, date) //Memo 클래스 생성
             data.add(memo)

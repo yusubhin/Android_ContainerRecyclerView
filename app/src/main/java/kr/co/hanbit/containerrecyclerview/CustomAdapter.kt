@@ -2,6 +2,7 @@ package kr.co.hanbit.containerrecyclerview
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import kr.co.hanbit.containerrecyclerview.databinding.ItemRecyclerBinding
 import java.text.SimpleDateFormat
@@ -42,6 +43,12 @@ class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.
         binding은 Holder 클래스 안에서 전역변수로 사용돼야 하므로 val
         이 어댑터에서 사용할 레이아웃의 이름이 item_recycle이므로 (안드로이드에서 생성해주는) 바인딩의 이름은 ItemRecyclerBinding
      */
+
+    init {
+        binding.root.setOnClickListener {
+            Toast.makeText(binding.root.context, "클릭된 아이템 = ${binding.textTitle.text}", Toast.LENGTH_LONG).show()
+        }
+    }
 
     /* 화면에 데이터를 세팅하는 함수 */
     fun setMemo(memo: Memo) {
